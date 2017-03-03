@@ -15,28 +15,24 @@
                         <thead>
                             <tr align="center">
                                 <th>Mã</th>
+                                <th>Mã Thể Loại</th>
                                 <th>Tên Loại</th>
-                                <th>Category Parent</th>
+                                <th>Tên Không Dấu</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
+                             @foreach($loaitin as $lt)
                             <tr class="odd gradeX" align="center">
-                                <td>1</td>
-                                <td>Tin Tức</td>
-                                <td>None</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                <td>{{$lt->id}}</td>
+                                <td>{{$lt->idTheLoai}}</td>
+                                <td>{{$lt->Ten}}</td>
+                                <td>{{$lt->TenKhongDau}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaitin/xoa"> Xóa</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaitin/sua/{{$lt->id}}">Sửa</a></td>
                             </tr>
-                            <tr class="even gradeC" align="center">
-                                <td>2</td>
-                                <td>Bóng Đá</td>
-                                <td>Thể Thao</td>
-                                <td>Ẩn</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

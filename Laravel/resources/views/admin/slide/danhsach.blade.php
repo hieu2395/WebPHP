@@ -14,29 +14,27 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
-                                <th>Mã</th>
-                                <th>Tên</th>
-                                <th>Category Parent</th>
+                                <th>Mã Slide</th>
+                                <th>Tên Slide</th>
+                                <th>Hình</th>
+                                <th>Nội Dung</th>
+                                <th>Link</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($slide as $sl)
                             <tr class="odd gradeX" align="center">
-                                <td>1</td>
-                                <td>Tin Tức</td>
-                                <td>None</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                <td>{{$sl->id}}</td>
+                                <td>{{$sl->Ten}}</td>
+                                <td>{{$sl->Hinh}}</td>
+                                <td>{{$sl->NoiDung}}</td>
+                                <td>{{$sl->link}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/slide/xoa"> Xóa</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/slide/sua/{{$sl->id}}">Sửa</a></td>
                             </tr>
-                            <tr class="even gradeC" align="center">
-                                <td>2</td>
-                                <td>Bóng Đá</td>
-                                <td>Thể Thao</td>
-                                <td>Ẩn</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

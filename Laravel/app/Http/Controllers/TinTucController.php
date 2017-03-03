@@ -9,7 +9,8 @@ class TinTucController extends Controller
 {
     public function getDanhSach()
     {
-  		return View('admin.tintuc.danhsach');
+      $tintuc = TinTuc::all();
+  		return View('admin.tintuc.danhsach', ['tintuc'=>$tintuc]);
     }
 
      public function getThem()

@@ -10,7 +10,8 @@ class SlideController extends Controller
     //
     public function getDanhSach()
     {
-   		return View('admin.slide.danhsach');
+      $slide = Slide::all();
+   		return View('admin.slide.danhsach', ['slide'=>$slide]);
     }
 
      public function getThem()

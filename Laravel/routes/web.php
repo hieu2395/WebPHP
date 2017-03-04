@@ -23,10 +23,14 @@ Route::group(['prefix'=>'admin'], function(){
 
 		Route::get('them', 'TheLoaiController@getThem');
 
-		Route::get('sua', 'TheLoaiController@getSua');
+		Route::get('sua/{id}', 'TheLoaiController@getSua');
 
 		Route::post('them', 'TheLoaiController@postThem');
-	
+
+		Route::post('sua/{id}', 'TheLoaiController@postSua');
+
+		Route::get('xoa/{id}', 'TheLoaiController@getXoa');
+
 	});
 
 	Route::group(['prefix'=>'loaitin'], function(){
@@ -39,6 +43,8 @@ Route::group(['prefix'=>'admin'], function(){
 
 		Route::post('them', 'LoaiTinController@postThem');
 
+		Route::post('sua', 'LoaiTinController@postSua');
+
 	});
 
 	Route::group(['prefix'=>'tintuc'], function(){
@@ -50,6 +56,8 @@ Route::group(['prefix'=>'admin'], function(){
 		Route::get('sua', 'TinTucController@getSua');
 		
 		Route::post('them', 'TinTucController@postThem');
+
+		Route::post('sua', 'TinTucController@postSua');
 	
 	});
 
@@ -62,6 +70,8 @@ Route::group(['prefix'=>'admin'], function(){
 		Route::get('sua', 'UserController@getSua');
 
 		Route::post('them', 'UserController@postThem');
+
+		Route::post('sua', 'UserController@postSua');
 	
 	});
 
@@ -74,6 +84,8 @@ Route::group(['prefix'=>'admin'], function(){
 		Route::get('sua', 'SlideController@getSua');
 
 		Route::post('them', 'SlideController@postThem');
+
+		Route::post('sua', 'SlideController@postSua');
 
 	});
 });

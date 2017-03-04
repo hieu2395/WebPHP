@@ -25,13 +25,14 @@ class LoaiTinController extends Controller
         $this->validate($request,
             [
                 'idTheLoai' => 'required',
-                'Ten' => 'required|min:3|max:100',
+                'Ten' => 'required|min:3|max:100|unique:TheLoai,Ten',
             ],
             [
                 'idTheLoai.required' => "Bạn Chưa Nhập Mã Thể Loại",
                 'Ten.required' => 'Bạn chưa nhập tên thể loại',
                 'Ten.min'=>'Tên thể loại ít nhất 3 ký tự',
                 'Ten.max'=>'Tên thể loại tối đa 100 ký tự',
+                'Ten.unique' => 'Tên thể loại đã tồn tại',
             ]);
         //lay du lieu luu vao model the loai
         $loaitin = new LoaiTin;

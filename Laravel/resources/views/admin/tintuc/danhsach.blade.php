@@ -14,15 +14,13 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
-                                <th>Mã Tin</th>
+                                <th>Mã</th>
                                 <th>Tiêu Đề</th>
-                                <th>Tên Không Dấu</th>
                                 <th>Tóm Tắt</th>
-                                <th>Nội Dung</th>
-                                <th>Hình</th>
-                                <th>Tin Nổi Bật</th>
+                                <th>Thể Loại</th>
+                                <th>Loại Tin</th>
                                 <th>Số Lượt Xem</th>
-                                <th>Mã Loại Tin</th>
+                                <th>Tin Nổi Bật</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -31,16 +29,23 @@
                              @foreach($tintuc as $tt)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$tt->id}}</td>
-                                <td>{{$tt->TieuDe}}</td>
-                                <td>{{$tt->TieuDeKhongDau}}</td>
+                                <td>
+                                    <p>{{$tt->TieuDe}}</p>
+                                    <img width="100px" src="upload/tintuc/{{$tt->Hinh}}" />
+                                </td>
                                 <td>{{$tt->TomTat}}</td>
-                                <td>{{$tt->NoiDung}}</td>
-                                <td>{{$tt->Hinh}}</td>
-                                <td>{{$tt->NoiBat}}</td>
+                                <td>{{$tt->loaitin->theloai->Ten}}</td>
+                                <td>{{$tt->loaitin->Ten}}</td>
                                 <td>{{$tt->SoLuotXem}}</td>
-                                <td>{{$tt->idLoaiTin}}</td>
+                                <td>
+                                    @if($tt->NoiBat == 0)
+                                        {{'Không'}}
+                                    @else
+                                        {{'Có'}}
+                                    @endif
+                                </td>
 
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa"> Xóa</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa{{$tt->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tt->id}}">Sửa</a></td>
                             </tr>
                             @endforeach

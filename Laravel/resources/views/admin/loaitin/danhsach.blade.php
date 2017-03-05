@@ -11,13 +11,20 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
+
+                    @if(session('thongbao'))
+                        <div class="alert alert-success">
+                            {{session('thongbao')}}
+                        </div>
+                    @endif
+
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
                                 <th>Mã</th>
-                                <th>Mã Thể Loại</th>
-                                <th>Tên Loại</th>
+                                <th>Tên</th>
                                 <th>Tên Không Dấu</th>
+                                <th>Thể Loại</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -26,10 +33,10 @@
                              @foreach($loaitin as $lt)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$lt->id}}</td>
-                                <td>{{$lt->idTheLoai}}</td>
                                 <td>{{$lt->Ten}}</td>
                                 <td>{{$lt->TenKhongDau}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaitin/xoa"> Xóa</a></td>
+                                <td>{{$lt->theloai->Ten}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaitin/xoa/{{$lt->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaitin/sua/{{$lt->id}}">Sửa</a></td>
                             </tr>
                             @endforeach

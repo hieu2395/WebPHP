@@ -32,8 +32,13 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
 
                             <div class="form-group">
-                                <label>Mã Thể Loại</label>
-                                <input class="form-control" type="number" min="0" max="10" name="idTheLoai" placeholder="Nhập Mã Loại Tin" />
+                                <label>Thể Loại</label>
+                                <select class="form-control" name="TheLoai">
+                                    @foreach($theloai as $tl)
+                                        <option value="{{$tl->id}}">{{$tl->Ten}}</option>
+                                    @endforeach
+                                </select>
+
                             </div>
 
                             <div class="form-group">

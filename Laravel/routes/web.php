@@ -39,11 +39,13 @@ Route::group(['prefix'=>'admin'], function(){
 
 		Route::get('them', 'LoaiTinController@getThem');
 
-		Route::get('sua', 'LoaiTinController@getSua');
+		Route::get('sua/{id}', 'LoaiTinController@getSua');
 
 		Route::post('them', 'LoaiTinController@postThem');
 
-		Route::post('sua', 'LoaiTinController@postSua');
+		Route::post('sua/{id}', 'LoaiTinController@postSua');
+
+		Route::get('xoa/{id}', 'LoaiTinController@getXoa');
 
 	});
 

@@ -90,4 +90,10 @@ Route::group(['prefix'=>'admin'], function(){
 		Route::post('sua', 'SlideController@postSua');
 
 	});
+
+	Route::group(['prefix'=>'ajax'], function(){
+
+		Route::get('loaitin/{idTheLoai}', 'AjaxController@getLoaiTin');
+
+	});
 });

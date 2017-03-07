@@ -38,7 +38,6 @@
                                         <option value="{{$tl->id}}">{{$tl->Ten}}</option>
                                     @endforeach
                                 </select>
-
                             </div>
 
                             <div class="form-group">

@@ -14,8 +14,13 @@ use App\TheLoai;
 Route::get('/', function () {
     return view('welcome');
 });
+//
+Route::get('admin/dangnhap', 'UserController@getDangnhapAdmin');
+Route::post('admin/dangnhap', 'UserController@postDangnhapAdmin');
+Route::get('admin/logout', 'UserController@getDangxuatAdmin');
 
-Route::group(['prefix'=>'admin'], function(){
+//middleware kiem tra dang nhap quyen admin moi dc vao
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	
 	Route::group(['prefix'=>'theloai'], function(){
 		//admin/theloai/danhsach|them|sua
@@ -55,12 +60,24 @@ Route::group(['prefix'=>'admin'], function(){
 
 		Route::get('them', 'TinTucController@getThem');
 
-		Route::get('sua', 'TinTucController@getSua');
+		Route::get('sua/{id}', 'TinTucController@getSua');
 		
 		Route::post('them', 'TinTucController@postThem');
 
-		Route::post('sua', 'TinTucController@postSua');
-	
+		Route::post('sua/{id}', 'TinTucController@postSua');
+
+		Route::get('xoa/{id}', 'TinTucController@getXoa');
+
+	});
+
+	Route::group(['prefix'=>'comment'], function(){
+
+		Route::get('danhsach', 'CommentController@getDanhSach');
+
+		Route::get('xoa/{id}', 'CommentController@getXoaUser');
+
+		Route::get('xoa/{id}/{idTinTuc}', 'CommentController@getXoa');
+
 	});
 
 	Route::group(['prefix'=>'user'], function(){
@@ -69,11 +86,13 @@ Route::group(['prefix'=>'admin'], function(){
 
 		Route::get('them', 'UserController@getThem');
 
-		Route::get('sua', 'UserController@getSua');
+		Route::get('sua/{id}', 'UserController@getSua');
 
 		Route::post('them', 'UserController@postThem');
 
-		Route::post('sua', 'UserController@postSua');
+		Route::post('sua/{id}', 'UserController@postSua');
+
+		Route::get('xoa/{id}', 'UserController@getXoa');
 	
 	});
 
@@ -83,12 +102,14 @@ Route::group(['prefix'=>'admin'], function(){
 
 		Route::get('them', 'SlideController@getThem');
 
-		Route::get('sua', 'SlideController@getSua');
+		Route::get('sua/{id}', 'SlideController@getSua');
 
 		Route::post('them', 'SlideController@postThem');
 
-		Route::post('sua', 'SlideController@postSua');
+		Route::post('sua/{id}', 'SlideController@postSua');
 
+		Route::get('xoa/{id}', 'SlideController@getXoa');
+		
 	});
 
 	Route::group(['prefix'=>'ajax'], function(){

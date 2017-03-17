@@ -6,8 +6,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Thể Loại
-                            <small>Thêm</small>
+                        <h1 class="page-header text-danger">Thể Loại
+                            <small class="text-info">Thêm</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -37,8 +37,8 @@
                                 <input class="form-control" name="Ten" placeholder="Nhập Tên Thể Loại" />
                             </div>
                            
-                            <button type="submit" class="btn btn-default">Thêm</button>
-                            <button type="reset" class="btn btn-default">Sửa</button>
+                            <button type="submit" class="btn btn-success">Thêm</button>
+                            <button type="reset" class="btn btn-danger">Sửa</button>
                         <form>
                     </div>
                 </div>

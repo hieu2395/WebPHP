@@ -6,8 +6,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Thể Loại
-                            <small>{{$theloai->Ten}}</small>
+                        <h1 class="page-header text-danger">Thể Loại
+                            <small class="text-info">{{$theloai->Ten}}</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -36,8 +36,8 @@
                                 <input class="form-control" name="Ten" placeholder="Điền Tên Thể Loại" value="{{$theloai->Ten}}" />
                             </div>
                             
-                            <button type="submit" class="btn btn-default">Sửa</button>
-                            <button type="reset" class="btn btn-default">Làm Mới</button>
+                            <button type="submit" class="btn btn-success">Sửa</button>
+                            <button type="reset" class="btn btn-danger">Làm Mới</button>
                         <form>
                     </div>
                 </div>

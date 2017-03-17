@@ -52,12 +52,11 @@ class TheLoaiController extends Controller
         $theloai = TheLoai::find($id);
         $this->validate($request,
             [
-                'Ten' => 'required|unique:TheLoai,Ten|min:3|max:100'
+                'Ten' => 'required|min:3|max:100'
             ]
             ,
             [
                 'Ten.required' => 'Bạn chưa nhập tên thể loại',
-                'Ten.unique' => 'Tên thể loại đã tồn tại',
                 'Ten.min' => 'Tên thể loại ít nhất 3 ký tự',
                 'Ten.max'=>'Tên thể loại tối đa 100 ký tự',
             ]

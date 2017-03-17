@@ -59,13 +59,12 @@ class LoaiTinController extends Controller
         $loaitin = LoaiTin::find($id);
         $this->validate($request,
             [
-                'Ten' => 'required|unique:LoaiTin,Ten|min:3|max:100',
+                'Ten' => 'required|min:3|max:100',
                 'TheLoai' => 'required',
             ]
             ,
             [
                 'Ten.required' => 'Bạn chưa nhập tên loại tin',
-                'Ten.unique' => 'Tên loại tin đã tồn tại',
                 'Ten.min' => 'Tên loại tin ít nhất 3 ký tự',
                 'Ten.max'=>'Tên loại tin tối đa 100 ký tự',
                 'TheLoai.required' => "Bạn chưa chọn thể loại",

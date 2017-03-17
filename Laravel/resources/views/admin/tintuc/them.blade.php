@@ -6,8 +6,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Tin Tức
-                            <small>Thêm</small>
+                        <h1 class="page-header text-danger">Tin Tức
+                            <small class="text-info">Thêm</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -42,7 +42,7 @@
                              <div class="form-group">
                                 <label>Loại Tin</label>
                                 <select class="form-control" name="LoaiTin" id="LoaiTin">
-                                     @foreach($loaitin as $lt)
+                                    @foreach($loaitin as $lt)
                                         <option value="{{$lt->id}}">{{$lt->Ten}}</option>
                                     @endforeach
                                 </select>
@@ -77,8 +77,8 @@
                                     <input name="NoiBat" value="1" type="radio">Có
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm</button>
-                            <button type="reset" class="btn btn-default">Làm Mới</button>
+                            <button type="submit" class="btn btn-success">Thêm</button>
+                            <button type="reset" class="btn btn-danger">Làm Mới</button>
                         <form>
                     </div>
                 </div>

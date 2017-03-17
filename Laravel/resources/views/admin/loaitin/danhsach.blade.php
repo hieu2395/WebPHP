@@ -6,8 +6,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Loại Tin
-                            <small>Danh Sách</small>
+                        <h1 class="page-header text-danger">Loại Tin
+                            <small class="text-info">Danh Sách</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -20,13 +20,13 @@
 
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
-                            <tr align="center">
-                                <th>Mã</th>
-                                <th>Tên</th>
-                                <th>Tên Không Dấu</th>
-                                <th>Thể Loại</th>
-                                <th>Xóa</th>
-                                <th>Sửa</th>
+                            <tr class="text-primary">
+                                <th id="center">Mã</th>
+                                <th id="center">Tên</th>
+                                <th id="center">Tên Không Dấu</th>
+                                <th id="center">Thể Loại</th>
+                                <th id="center">Xóa</th>
+                                <th id="center">Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,8 +36,8 @@
                                 <td>{{$lt->Ten}}</td>
                                 <td>{{$lt->TenKhongDau}}</td>
                                 <td>{{$lt->theloai->Ten}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaitin/xoa/{{$lt->id}}"> Xóa</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaitin/sua/{{$lt->id}}">Sửa</a></td>
+                                <td class="center"><a href="admin/loaitin/xoa/{{$lt->id}}" class="btn btn-danger"><i class="fa fa-trash-o  fa-fw "></i> Xóa</a></td>
+                                <td class="center"><a href="admin/loaitin/sua/{{$lt->id}}" class="btn btn-success"><i class="fa fa-pencil fa-fw"></i>Sửa</a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -49,3 +49,8 @@
         </div>
         <!-- /#page-wrapper -->
 @endsection
+<style type="text/css">
+    #center{
+        text-align: center;
+    }
+</style>
